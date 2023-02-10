@@ -12,37 +12,24 @@ public class ChatMessageRepository {
         listapp.add(message);
     }
 
-    List<String> getLastTenMessages() {
+    List<String> getLastTenMessages(){
         //Deque<String> addmessage = new ArrayDeque<>();
-        int lastIdx = listapp.size() - 1;
-        int limit =0;
-        //System.out.println(listapp.get(lastIdx));
-
+        int lastIdx = listapp.size();
         List<String> repolist = new ArrayList<>(10);
-        if (listapp.size() == 1) {
-            return listapp;
-        } else {
-            for (int counter = lastIdx ; counter > 0; counter--) {
-
-                repolist.add(listapp.get(counter));
-                //System.out.println(counter);
-                limit+=1;
-
-                if(limit==10){
-                    break;
-                }
-
-
-               /* if(repolist.size()-1==9){
-                    counter= lastIdx;
-                }
-*/
-
-
+        if(listapp.size()>10) {
+            for (int counter = 1; counter<10; counter++) {
+                repolist.add(listapp.get(lastIdx - counter));
             }
-            return repolist;
-
+        }else{
+            for(int counter2=1; counter2<=lastIdx;counter2++){
+                repolist.add(listapp.get(lastIdx-counter2));
+            }
         }
+        return repolist;
     }
+
+    // Source aider par les camarades de classe
+
+
 }
 
