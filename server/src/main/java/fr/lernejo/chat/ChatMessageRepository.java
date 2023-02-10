@@ -14,15 +14,18 @@ public class ChatMessageRepository {
 
     List<String> getLastTenMessages(){
         //Deque<String> addmessage = new ArrayDeque<>();
-        int lastIdx = listapp.size();
+        int lastIdx = listapp.size()-1;
+        int lenghtoflist = 0;
         List<String> repolist = new ArrayList<>(10);
-        if(listapp.size()>10) {
-            for (int counter = 1; counter<10; counter++) {
-                repolist.add(listapp.get(lastIdx - counter));
+        if(lastIdx>9) {
+
+            while (lenghtoflist<10){
+                repolist.add(listapp.get(lastIdx - lenghtoflist));
+                lenghtoflist+=1;
             }
         }else{
-            for(int counter2=1; counter2<=lastIdx;counter2++){
-                repolist.add(listapp.get(lastIdx-counter2));
+            for(int counter=0; counter<=lastIdx;counter++){
+                repolist.add(listapp.get(lastIdx-counter));
             }
         }
         return repolist;
@@ -31,5 +34,39 @@ public class ChatMessageRepository {
     // Source aider par les camarades de classe
 
 
+ /*   List<String> getLastTenMessages() {
+        //Deque<String> addmessage = new ArrayDeque<>();
+        int lastIdx = listapp.size() - 1;
+        int limit =0;
+        //System.out.println(listapp.get(lastIdx));
+
+        List<String> repolist = new ArrayList<>(10);
+        if (listapp.size() == 1) {
+            return listapp;
+        } else {
+            for (int counter = lastIdx ; counter > 0; counter--) {
+
+                repolist.add(listapp.get(counter));
+                System.out.println(counter);
+                limit+=1;
+
+                if(limit==10){
+                    break;
+                }
+
+
+               /* if(repolist.size()-1==9){
+                    counter= lastIdx;
+                }
+
+
+
+            }
+            return repolist;
+
+        }
+    }
+
+  */
 }
 
