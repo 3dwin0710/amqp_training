@@ -43,6 +43,17 @@
             <!-- <version>???</version> --> <!--(1)-->
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+
+
 
     </dependencies>
     <dependencyManagement>
@@ -55,6 +66,7 @@
                 <type>pom</type>
             </dependency>
         </dependencies>
+
     </dependencyManagement>
 
     <build>
