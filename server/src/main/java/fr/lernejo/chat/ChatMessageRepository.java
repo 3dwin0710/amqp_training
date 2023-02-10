@@ -25,7 +25,7 @@ public class ChatMessageRepository {
             for (int counter = lastIdx ; counter > 0; counter--) {
 
                 repolist.add(listapp.get(counter));
-                System.out.println(counter);
+                //System.out.println(counter);
                 limit+=1;
 
                 if(limit==10){
