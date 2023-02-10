@@ -26,7 +26,7 @@ public class Launcher {
 
 
                 if (value.equals( "q" )) {
-                    System.out.println("bye");
+                    System.out.println("Bye");
                     break;
                 }
                 else {
